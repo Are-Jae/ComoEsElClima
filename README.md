@@ -27,3 +27,6 @@ THEN I am again presented with current and future conditions for that city
 
 [5 Day Weather Forecast](https://openweathermap.org/forecast5)
 
+Do I need a landing page? 
+Do I need multiple style pages? 
+Why can't I fill the header background? 

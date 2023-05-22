@@ -24,7 +24,9 @@ function Weeklyweather() {
 
 searchBtn.addEventListener('click', Weeklyweather);
 
-
+//  funcx calling API
+// funcx calling api data to display on DOM
+// funcx to save session storage 
 //need to save session storage 
 
 //Weeklyweather function will handle calling the API to output data to DOM 
@@ -45,6 +47,4 @@ searchBtn.addEventListener('click', Weeklyweather);
 
     Weeklyweather(); 
 
-    funcx calling API
-    funcx calling api data to display on DOM
-    funcx to save session storage 
+   

@@ -5,31 +5,32 @@ const APIkey = "367189446bf220ed3e94d1f7f746deec";
 const forecast = document.querySelectorAll("#forecast");
 
 
-
+const errorMessage = "Unable to find city, try again?"
 
 //add lat, lon, appid var 
 //find lat &  lon for city
 //use lat lon funcx to grab weather info for city 
 
 
-
+const search = document.getElementById("search");
+search.onclick = function(event){
+    console.log(event)
+}
 
 
 //  funcx calling API
 function Weeklyweather() {
-    console.log(city)
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`)
-        .then((data) => { console.log(data)}) 
+    if ( search === 'clicked') {
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`)
         
-        // .then((data) => {
-        //     console.log(data);
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        // });
+    } else {
+       return (errorMessage) 
+    }
+   
+        
 }
 
-searchBtn.addEventListener('click', Weeklyweather);
+
 
 
 

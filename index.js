@@ -35,32 +35,84 @@
 
 
 
-const weatherAPI = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={367189446bf220ed3e94d1f7f746deec}";
+const weatherAPI = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={APIkey}";
 const cityInput = document.getElementById("locationSearch");
 const searchBtn = document.querySelector("#search");
 const APIkey = "367189446bf220ed3e94d1f7f746deec";
 const forecast = document.querySelectorAll("#forecast");
 const errorMessage = "Unable to find city, try again?"; //needs to display on dom or return? 
+// let lon = 
+// let lat =
+// let appid = 
 
-searchBtn.addEventListener("click", function() {
+
+searchBtn.addEventListener("click", function(event) {
+  event.preventDefault()
   const city = cityInput.value;
   if (city !== '') {
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`)
-      .then(response => response.json())
-      .then(data => {
-        // Process the received data
-        console.log(data);
-      })
-      .catch(error => {
-        console.log(errorMessage, error);
-      });
+  getForecast(city);
+  getFivedayForecast(city);
   } else {
     console.log(errorMessage);
   }
 });
 
+function getForecast(city){
 
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=imperial`)
+      .then(response => response.json())
+      .then(data => {
+        // Process the received data
+        console.log(data);
+        var cardTemp = `<div class="card-group"
+        <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">City${data.name}
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="card-img-top" alt="...">
+            </h5>
+            <p class="card-text">temperature:${data.main.temp}</p>
+            <p class="card-text">humidity:${data.main.humidity}</p>
+            <p class="card-text">wind speed:${data.wind.speed}</p>
+            <p class="card-text"> conditions${data.weather[0].description}
+          </div></div></div>`
+          document.getElementById("forecast").innerHTML = cardTemp
+      })
+      .catch(error => {
+        console.log(errorMessage, error);
+      });
 
+}
+function getFivedayForecast(city){
+
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}&units=imperial`)
+    .then(response => response.json())
+    .then(data => {
+      // Process the received data
+      console.log(data);
+      var cardTemp = ``;
+      for (let i= 0; i < data.list.length;i=i+8){
+        cardTemp += `        <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">City${data.list[i].dt_txt}
+        <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" class="card-img-top" alt="...">
+            </h5>
+            <p class="card-text">temperature:${data.list[i].main.temp}</p>
+            <p class="card-text">humidity:${data.list[i].main.humidity}</p>
+            <p class="card-text">wind speed:${data.list[i].wind.speed}</p>
+            <p class="card-text"> conditions${data.list[i].weather[0].description}
+          </div></div>`
+      }
+       
+      
+document.getElementById("FivedayForecast").innerHTML = cardTemp
+    })
+    .catch(error => {
+      console.log(errorMessage, error);
+    });
+
+}
+
+//const Fiveday= api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
 
 //add lat, lon, appid var 
 //find lat &  lon for city

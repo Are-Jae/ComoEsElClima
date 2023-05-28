@@ -21,12 +21,12 @@
 //     if ( search === 'clicked') {
 //         fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`);//get correct url 
 //         console.log("Is working");
-        
+
 //     } else {
 //        return (errorMessage) 
 //     }
-   
-        
+
+
 // }
 
 
@@ -45,29 +45,43 @@ const errorMessage = "Unable to find city, try again?"; //needs to display on do
 // let lat =
 // let appid = 
 
+let searchHistory = []
 
-searchBtn.addEventListener("click", function(event) {
+if (localStorage.getItem("cityName")) {
+  searchHistory = JSON.parse(localStorage.getItem("cityName"))
+}
+
+searchBtn.addEventListener("click", function (event) {
   event.preventDefault()
   const city = cityInput.value;
   if (city !== '') {
-  getForecast(city);
-  getFivedayForecast(city);
+    getForecast(city);
+    getFivedayForecast(city);
   } else {
     console.log(errorMessage);
   }
 });
 
-function getForecast(city){
+function getForecast(city) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=imperial`)
-      .then(response => response.json())
-      .then(data => {
-        // Process the received data
-        console.log(data);
-        var cardTemp = `<div class="card-group"
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=imperial`)
+    .then(response => response.json())
+    .then(data => {
+      // Process the received data
+      console.log(data);
+
+      if (data.name && searchHistory.includes(data.name) === false) {
+        searchHistory.push(data.name)
+
+        localStorage.setItem("cityName", JSON.stringify(searchHistory))
+
+      }
+
+      var cardTemp = `<div class="card-group"
         <div class="card">
         <div class="card-body">
-        <h5 class="card-title">City${data.name}
+        <h5 class="card-title">${data.name}
+        
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="card-img-top" alt="...">
             </h5>
             <p class="card-text">temperature:${data.main.temp}</p>
@@ -75,14 +89,14 @@ function getForecast(city){
             <p class="card-text">wind speed:${data.wind.speed}</p>
             <p class="card-text"> conditions${data.weather[0].description}
           </div></div></div>`
-          document.getElementById("forecast").innerHTML = cardTemp
-      })
-      .catch(error => {
-        console.log(errorMessage, error);
-      });
+      document.getElementById("forecast").innerHTML = cardTemp
+    })
+    .catch(error => {
+      console.log(errorMessage, error);
+    });
 
 }
-function getFivedayForecast(city){
+function getFivedayForecast(city) {
 
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIkey}&units=imperial`)
     .then(response => response.json())
@@ -90,7 +104,7 @@ function getFivedayForecast(city){
       // Process the received data
       console.log(data);
       var cardTemp = ``;
-      for (let i= 0; i < data.list.length;i=i+8){
+      for (let i = 0; i < data.list.length; i = i + 8) {
         cardTemp += `        <div class="card">
         <div class="card-body">
         <h5 class="card-title">City${data.list[i].dt_txt}
@@ -102,9 +116,9 @@ function getFivedayForecast(city){
             <p class="card-text"> conditions${data.list[i].weather[0].description}
           </div></div>`
       }
-       
-      
-document.getElementById("FivedayForecast").innerHTML = cardTemp
+
+
+      document.getElementById("FivedayForecast").innerHTML = cardTemp
     })
     .catch(error => {
       console.log(errorMessage, error);
@@ -135,11 +149,10 @@ document.getElementById("FivedayForecast").innerHTML = cardTemp
 
         // } else {
         //     return //am I returning: return locationSearch? here or is return on its own fine
-        //     //this can be an async funcx 
+        //     //this can be an async funcx
         // }
-    
 
 
-    
 
-   
+
+

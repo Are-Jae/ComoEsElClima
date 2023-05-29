@@ -70,7 +70,7 @@ function getForecast(city) {
       var cardTemp = `<div class="card-group"
         <div class="card">
         <div class="card-body">
-        <h5 class="card-title">${data.name}
+        <h5 class="card-title">${city}
         
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="card-img-top" alt="...">
             </h5>
@@ -85,6 +85,8 @@ function getForecast(city) {
       console.log(errorMessage, error);
     });
 
+
+
 }
 function getFivedayForecast(city) {
 
@@ -97,7 +99,7 @@ function getFivedayForecast(city) {
       for (let i = 3; i < data.list.length; i = i + 8) {
         cardTemp += `        <div class="card">
         <div class="card-body">
-        <h5 class="card-title">${data.list[i].dt_txt.city}
+        <h5 class="card-title">${city}
         <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" class="card-img-top" alt="...">
             </h5>
             <p class="card-text">temperature:${data.list[i].main.temp}</p>
@@ -106,9 +108,11 @@ function getFivedayForecast(city) {
             <p class="card-text"> conditions:${data.list[i].weather[0].description}</p> 
           </div></div>`
       }
-
-
+     
+      
       document.getElementById("FivedayForecast").innerHTML = cardTemp
+
+      
     })
     .catch(error => {
       console.log(errorMessage, error);

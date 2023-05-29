@@ -23,12 +23,34 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 
+## App
+
+![](https://github.com/Are-Jae/ComoEsElClima/blob/eb9c107cb17f4c84b18544720550c0c2325ebb9f/CEEC.gif) 
+
+
 ## Future Usage
 I'd like to add a feature that allows the user to send the forecast results to their email 
+
+
 ## Resources 
 
 [5 Day Weather Forecast](https://openweathermap.org/forecast5)
 
-Do I need a landing page? 
-Do I need multiple style pages? 
-Why can't I fill the header background? 
+
+Bootstrap 
+
+Pexels 
+
+AskBCS
+
+TAs
+
+Tutors 
+
+
+
+## License 
+N/A
+
+## Installation
+N/A

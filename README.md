@@ -22,35 +22,32 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
-
 ## App
 
-![](https://github.com/Are-Jae/ComoEsElClima/blob/eb9c107cb17f4c84b18544720550c0c2325ebb9f/CEEC.gif) 
-
+![](https://github.com/Are-Jae/ComoEsElClima/blob/eb9c107cb17f4c84b18544720550c0c2325ebb9f/CEEC.gif) (change this gif to current funcx when github pages deploys )
 
 ## Future Usage
-I'd like to add a feature that allows the user to send the forecast results to their email 
 
+I'd like to add a feature that allows the user to send the forecast results to their email
 
-## Resources 
+## Resources
 
 [5 Day Weather Forecast](https://openweathermap.org/forecast5)
 
+Bootstrap
 
-Bootstrap 
-
-Pexels 
+Pexels
 
 AskBCS
 
 TAs
 
-Tutors 
+Tutors
 
+## License
 
-
-## License 
 N/A
 
 ## Installation
+
 N/A

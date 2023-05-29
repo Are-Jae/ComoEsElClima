@@ -1,62 +1,47 @@
 header h1 {
-    
-  background: url("../imgs/pexels-lumn-1028600.jpg") no-repeat fixed center;
+    background: url("../imgs/pexels-lumn-1028600.jpg") no-repeat fixed center;
 
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 
-  height: 30vh;
+    height: 30vh;
 }
 
- .Headertext{
-
-     position:relative;/*
+.Headertext {
+    position: relative;
+    /*
     text-align:center;
     color: white;
     display:block;
     justify-content: center;*/
- 
-     background: fill; 
 
-        /* position: absolute; */
-         top: 50%;
-        /* left: 50%;  */
-        /* right: 50%; */
-        /* transform: translate(-50%, -50%); */
-        color: #31B0D5;
-        text-align: center;
-      }
+    background: fill;
 
-
-   
-   
+    /* position: absolute; */
+    top: 50%;
+    /* left: 50%;  */
+    /* right: 50%; */
+    /* transform: translate(-50%, -50%); */
+    color: #31b0d5;
+    text-align: center;
+}
 
 body {
-  margin: 0px !important;
-  padding: 0px;
-  
+    margin: 0px !important;
+    padding: 0px;
 }
-
 
 .weatherResults {
-    position:relative;
+    position: relative;
     align-items: flex-start;
-    color:#31B0D5; 
-
-
-
-
+    color: #31b0d5;
 }
-
-
 
 .forecastResults {
-  display: flex;
-  flex-wrap: wrap;
-  color:#31B0D5; 
+    display: flex;
+    flex-wrap: wrap;
+    color: #31b0d5;
 }
-
-

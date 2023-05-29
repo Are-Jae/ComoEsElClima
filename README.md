@@ -23,6 +23,11 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 
+## App
+
+![](https://github.com/Are-Jae/ComoEsElClima/blob/eb9c107cb17f4c84b18544720550c0c2325ebb9f/CEEC.gif) 
+
+
 ## Future Usage
 I'd like to add a feature that allows the user to send the forecast results to their email 
 
@@ -30,9 +35,17 @@ I'd like to add a feature that allows the user to send the forecast results to t
 ## Resources 
 
 [5 Day Weather Forecast](https://openweathermap.org/forecast5)
+
+
 Bootstrap 
 
 Pexels 
+
+AskBCS
+
+TAs
+
+Tutors 
 
 
 

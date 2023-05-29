@@ -13,16 +13,26 @@ header h1 {
 
  .Headertext{
 
-    position:relative;
+     position:relative;/*
     text-align:center;
     color: white;
     display:block;
-    justify-content: center;
+    justify-content: center;*/
  
-     background: fill;
-    
+     background: fill; 
+
+        /* position: absolute; */
+         top: 50%;
+        /* left: 50%;  */
+        /* right: 50%; */
+        /* transform: translate(-50%, -50%); */
+        color: #31B0D5;
+        text-align: center;
+      }
+
+
    
-    }
+   
 
 body {
   margin: 0px !important;

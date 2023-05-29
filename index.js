@@ -1,6 +1,6 @@
 
 
-const weatherAPI = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={APIkey}";
+const weatherAPI = "https://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIkey}";
 const cityInput = document.getElementById("locationSearch");
 const searchBtn = document.querySelector("#search");
 const APIkey = "367189446bf220ed3e94d1f7f746deec";
@@ -24,7 +24,7 @@ searchBtn.addEventListener("click", function (event) {
     getFivedayForecast(city);
 
     let btn = document.createElement("button")
-    btn.textContent = city 
+    btn.textContent = city ('')
     buttonHistory.appendChild(btn)
   } else {
     console.log(errorMessage);
@@ -77,7 +77,7 @@ function getForecast(city) {
             <p class="card-text">temperature:${data.main.temp}</p>
             <p class="card-text">humidity:${data.main.humidity}</p>
             <p class="card-text">wind speed:${data.wind.speed}</p>
-            <p class="card-text"> conditions${data.weather[0].description}
+            <p class="card-text"> conditions${data.weather[0].description}</p>
           </div></div></div>`
       document.getElementById("forecast").innerHTML = cardTemp
     })
@@ -97,13 +97,13 @@ function getFivedayForecast(city) {
       for (let i = 3; i < data.list.length; i = i + 8) {
         cardTemp += `        <div class="card">
         <div class="card-body">
-        <h5 class="card-title">City${data.list[i].dt_txt}
+        <h5 class="card-title">${data.list[i].dt_txt.city}
         <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" class="card-img-top" alt="...">
             </h5>
             <p class="card-text">temperature:${data.list[i].main.temp}</p>
             <p class="card-text">humidity:${data.list[i].main.humidity}</p>
             <p class="card-text">wind speed:${data.list[i].wind.speed}</p>
-            <p class="card-text"> conditions${data.list[i].weather[0].description}
+            <p class="card-text"> conditions:${data.list[i].weather[0].description}</p> 
           </div></div>`
       }
 
@@ -126,3 +126,6 @@ function retrieveCities (){
 }
 
 displayHistory(); 
+
+retrieveCities(); 
+

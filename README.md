@@ -24,15 +24,15 @@ THEN I am again presented with current and future conditions for that city
 
 ## App Functionality
 
-![](https://github.com/Are-Jae/ComoEsElClima/blob/main/Como%20Es%20El%20Clima.gif) 
+(![App functionality](imgs/Como%20Es%20El%20Clima.gif)) 
 
 ## Deployed App 
 
-![](https://are-jae.github.io/ComoEsElClima/)
+(![(https://are-jae.github.io/ComoEsElClima/)])
 
 ## Future Usage
 
-I'd like to add a feature that allows the user to send the forecast results to their email
+I'd like to add a feature that allows the user to send the forecast results to their email. <br>
 I'd like for my styling to be more polished: search history buttons aligned to the left side of the page, header text centered in the middle of image instead of top and for an error message to display on the page if user misspells a city name 
 
 ## Resources

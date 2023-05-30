@@ -22,13 +22,18 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
-## App
+## App Functionality
 
-![](https://github.com/Are-Jae/ComoEsElClima/blob/eb9c107cb17f4c84b18544720550c0c2325ebb9f/CEEC.gif) (change this gif to current funcx when github pages deploys )
+![](https://github.com/Are-Jae/ComoEsElClima/blob/main/Como%20Es%20El%20Clima.gif) 
+
+## Deployed App 
+
+![](https://are-jae.github.io/ComoEsElClima/)
 
 ## Future Usage
 
 I'd like to add a feature that allows the user to send the forecast results to their email
+I'd like for my styling to be more polished: search history buttons aligned to the left side of the page, header text centered in the middle of image instead of top and for an error message to display on the page if user misspells a city name 
 
 ## Resources
 
